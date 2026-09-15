@@ -205,7 +205,7 @@ export default defineComponent({
         const [latitude, longitude] = this.coordinates.split(",");
         // API call
         const response = await fetch(
-          `https://api.openweathermap.org/data/2.5/weather?lat=${latitude.trim()}&lon=${longitude.trim()}&appid=a508522611f3769a546ee178ff862ef8&units=metric`
+          `https://api.openweathermap.org/data/2.5/weather?lat=${latitude.trim()}&lon=${longitude.trim()}&appid=OPENWEATHERMAP_API_KEY&units=metric`
         );
         const data = await response.json();
         // check if data exists before accessing it
