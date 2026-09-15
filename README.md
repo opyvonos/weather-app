@@ -1,53 +1,59 @@
-# Додаток для відображення стану погоди
+# Weather Monitoring Application
 
-Проєкт реалізує інформаційну систему для перегляду стану погоди у різних містах світу. Система працює як вебдодаток, а також доступна на персональних комп’ютерах під керуванням ОС Windows та мобільних пристроях Android.
+An information system for viewing current weather conditions in cities worldwide. The system operates as a web application and is available as a desktop client for Windows OS and a mobile application for Android devices.
 
-## Функціональні можливості:
+## Key Features
 
-- перегляд погодних умов у реальному часі;
-- пошук даних про погоду за назвою міста чи координатами;
-- відображення основних погодних параметрів: температура, вологість, швидкість вітру, час сходу та заходу сонця тощо;
-- кросплатформеність: забезпечення однакового функціоналу на всіх платформах.
+- Fetching current weather data on demand.
+- Weather data search by city name or geographic coordinates.
+- Display of key weather parameters: temperature, humidity, wind speed, sunrise and sunset times, etc.
+- Cross-platform support with consistent core functionality across web, desktop, and mobile environments.
 
-## Використані технології
+## Tech Stack
 
-- **Мова програмування:** JavaScript
-- **Фреймворки:** Quasar (Vue.js), Electron, Apache Cordova
-- **API:** OpenWeatherMap
-- **CSS-препроцесор**: SCSS
-- **Інструменти:** Node.js, npm, Quasar CLI, Android Studio
+- **Programming Language:** JavaScript
+- **Frontend/UI:** Quasar (Vue.js)
+- **Desktop:** Electron
+- **Mobile:** Apache Cordova
+- **API:** OpenWeatherMap (REST API, JSON)
+- **CSS Preprocessor:** SCSS
+- **Tools:** Node.js, npm, Quasar CLI, Android Studio
 
-## Структура системи
+## System Architecture
 
-- Компоненти Quasar для відображення даних про погоду
-- Формування запитів до OpenWeatherMap API та обробка відповідей
-- Vue Router для навігації між сторінками
+- Quasar components for rendering the UI and displaying weather data.
+- Asynchronous HTTP requests to the OpenWeatherMap API with JSON response handling.
+- Vue Router for client-side page navigation within the SPA environment.
 
-## Інтерфейс користувача
+## User Interface
 
-Інтерфейс додатка містить поле введення для пошуку за назвою міста або координатами, плаваючу кнопку для навігації між сторінками, а також відображення результатів з поточними показниками погоди.
+The application interface includes an input field for searching weather data by city name or coordinates, a floating action button for page navigation, and dynamic components displaying current weather parameters.
 
-![Головна сторінка](demo/demo1.png)  
-***Головна сторінка***
+![Main Page](demo/demo1.png)  
+***Main Page***
 
-![Отримання погоди за назвою міста](demo/demo2.png)  
-***Отримання погодних даних за назвою міста***
+![Weather Data by City Name](demo/demo2.png)  
+***Weather Data Retrieval by City Name***
 
-![Отримання погоди за координатами](demo/demo3.png)  
-***Отримання погодних даних за координатами***
+![Weather Data by Coordinates](demo/demo3.png)  
+***Weather Data Retrieval by Coordinates***
 
-## Запуск проєкту
+## Getting Started
 
-1. Клонувати репозиторій:  
+1. Clone the repository:  
 	`git clone https://github.com/opyvonos/weather-app`
-2. Встановити залежності:  
+2. Configure the OpenWeatherMap API key:
+	Replace `OPENWEATHERMAP_API_KEY` with a valid API key obtained from OpenWeatherMap in the following files:
+	- `src/pages/IndexPage.vue`
+	- `src/pages/PageCoords.vue`
+3. Install project dependencies:  
 	`npm install`
-3. Запустити вебзастосунок:  
+4. Launch the web application in development mode:  
 	`quasar dev`
-4. Зібрати додаток для персонального комп'ютера:  
+5. Build the desktop application (Windows):  
 	`quasar build -m electron`
-5. Зібрати додаток для мобільного пристрою Android:  
+6. Build the mobile application (Android):  
 	`npm install -g cordova`  
 	`quasar mode add cordova`  
 	`quasar build -m cordova -T android`  
-	Для збірки на Android потрібно додатково встановити **Java JDK** та **Android SDK**.
+	*Note:* Building for Android requires the **Java JDK** and **Android SDK** to be pre-installed.
